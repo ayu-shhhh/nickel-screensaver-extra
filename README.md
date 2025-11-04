@@ -29,8 +29,8 @@ If you haven't enabled it, follow these steps:
   6. Lock the device. You should see a random screensaver.
 
 ### 2. Backup your screensavers in `.kobo/screensaver`
-... because they will be deleted by Nickel Screensaver every time you lock the screen.  
-You can move them to `.adds/screensaver`, this is the folder that Nickel Screensaver uses to load the screensavers.
+Every time you lock the device, files in the `.kobo/screensaver` folder that aren't related to Nickel Screensaver will be moved automatically to `.adds/screensaver`.  
+Usually, you don't need to do this step, but it's better safe than sorry.
 
 # How to install
 Make sure to read the `Preparation` section first.
