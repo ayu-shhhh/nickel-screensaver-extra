@@ -41,6 +41,15 @@ After enabling the Kobo screensaver feature, follow these steps to install:
 3. Copy the `KoboRoot.tgz` file (downloaded in step 1) into the `.kobo` folder
 4. Eject the device safely
 
+The file structure should look like this:  
+```
+.kobo/
+├─ screensaver/
+│  ├─ cat.png
+│  ├─ dog.jpg
+├─ KoboRoot.tgz
+```
+
 After it installs and reboots, try to lock the screen. If it shows your screensaver, that means it works. If it doesn't, check the **Troubleshooting** section.
 
 Now the file structure should look like this:  
