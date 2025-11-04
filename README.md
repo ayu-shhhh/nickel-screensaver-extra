@@ -36,10 +36,21 @@ Usually, you don't need to do this step, but it's better safe than sorry.
 Make sure to read the `Preparation` section first.
 
 1. Download the installation file (not available at the moment)
-2. Connect your Kobo eReader to your computer  
-3. In the `.kobo` folder, create a new folder named `screensaver`, then put your PNG/JPG photos into it
-4. Copy `KoboRoot.tgz` (downloaded in step 1) into the `.kobo` folder
-5. Eject the device safely
+2. Connect your Kobo eReader to your computer
+3. Make sure the `.kobo/screensaver` folder exists (create it if needed)  
+4. Copy the `KoboRoot.tgz` file (downloaded in step 1) into the `.kobo` folder
+5. Copy your screensavers (PNG/JPG files) to the `.adds/screensaver` folder (create it if it doesn't exist)
+6. Eject the device safely
+
+The file structure should look like this:  
+```
+.adds/
+├─ screensaver/
+│  ├─ cat.png
+│  ├─ dog.jpg
+.kobo/
+├─ screensaver/
+```
 
 After it installs and reboots, try to lock the screen. If it shows your screensaver, that means it works. If it doesn't, check the **Troubleshooting** section
 
