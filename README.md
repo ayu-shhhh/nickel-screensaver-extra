@@ -1,7 +1,6 @@
 # Nickel Screensaver
-(work in progress, please come back later)
 
-Add the transparent screensaver feature to Kobo OS, similar to the one on KOReader.
+Nickel Screensaver is an addon that brings the transparent screensaver feature to Kobo OS, similar to the one on KOReader.
 
 <table>
   <tbody>
@@ -14,7 +13,6 @@ Add the transparent screensaver feature to Kobo OS, similar to the one on KORead
 Nickel Screensaver supports both PNG and JPG screensavers. It only applies the transparent effect when you're reading a book. In other screens, it displays your screensaver on top of a white screen.  
 
 It achieves the "transparent" effect by capturing screenshot of the current screen before the device goes to sleep, then combines that with your transparent screensaver on top. These extra steps add slight delay, so make sure your PNG screensavers are small and optimized. Check the **Screenshot preparation** section for more information.
-
 
 # Preparation  
 
@@ -29,10 +27,15 @@ If you haven't enabled it, follow these steps:
   6. Lock the device. You should see a random screensaver.
 
 ### 2. Backup your screensavers in `.kobo/screensaver`
+
 Every time you lock the device, files in the `.kobo/screensaver` folder that aren't related to Nickel Screensaver will be moved automatically to `.adds/screensaver`.  
+
 Usually, you don't need to do this step, but it's better safe than sorry.
 
 # How to install
+
+**⚠️ Requirement:** Nickel Screensaver only supports Kobo eReader running firmware 4.21.15015 and later
+
 Make sure to read the `Preparation` section first.  
 After enabling the Kobo screensaver feature, follow these steps to install:  
 
@@ -62,7 +65,7 @@ Now the file structure should look like this:
 ├─ screensaver/
 ```
 
-From now on, `.adds/screensaver/` is the new location for your screensavers. Don't place them in `.kobo/screensaver` anymore.
+From now on, `.adds/screensaver/` is the new location for your screensavers. Don't place them in `.kobo/screensaver` anymore.  
 
 # Screensaver preparation  
 
@@ -72,11 +75,14 @@ From now on, `.adds/screensaver/` is the new location for your screensavers. Don
 3. To avoid unnecessary slowdown, the screensaver dimensions must exactly match your Kobo eReader's screen resolution (for example, it's must be 1072x1448px for Kobo Clara BW). If it doesn't match, Nickel Screensaver will take extra time to scale the unoptimized image first (it does that everytime).
 
 ## Resources for screensavers or for creating screensavers
+- [redphx/ereader-screensaver](https://github.com/redphx/ereader-screensaver)
 - [readerbackdrop.com](https://www.readerbackdrop.com/)
 - [huaban.com](https://huaban.com)
 
-# How to uninstall  
-To uninstall Nickel Screensaver, put a file named `uninstall` in the `.adds/screensaver` folder.
+# How to disable or uninstall  
+To temporary disable Nickel Screensaver, simply turn off the Kobo screensaver feature, or rename the `.kobo/screensaver` folder to something else (you can do this with [NickelMenu](https://github.com/pgaskin/NickelMenu)).  
+
+To uninstall, put a file named `uninstall` in the `.adds/screensaver` folder, then reboot the device.
 
 # Troubleshooting  
 
@@ -86,7 +92,8 @@ That means there is a bug with Nickel Screensaver. Don't panic, just uninstall i
 
 ### 2. Screensaver images show up in my library  
 
-You need to edit Kobo's setting file to prevent it from hidden *nix folders.  
+You need to edit Kobo's setting file to prevent it from scanning hidden folders.  
+
 1. Connect your Kobo eReader to your computer
 2. Open `.kobo/Kobo/Kobo eReader.conf` file with a text editor
 3. Find the line that starts with `ExcludeSyncFolders=`, then replace the entire line with this:
