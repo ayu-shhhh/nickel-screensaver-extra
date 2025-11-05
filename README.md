@@ -1,7 +1,7 @@
 # Nickel Screensaver
 (work in progress, please come back later)
 
-Add the transparent screensaver feature to Kobo OS.
+Add the transparent screensaver feature to Kobo OS, similar to the one on KOReader.
 
 <table>
   <tbody>
@@ -64,6 +64,17 @@ Now the file structure should look like this:
 
 From now on, `.adds/screensaver/` is the new location for your screensavers. Don't place them in `.kobo/screensaver` anymore.
 
+# Screensaver preparation  
+
+## Best practices:  
+1. Screensavers must be either PNG or JPG format
+2. A file size under 1MB is recommended. You can use services like [Squoosh](https://squoosh.app/) to reduce the file size.
+3. To avoid unnecessary slowdown, the screensaver dimensions must exactly match your Kobo eReader's screen resolution (for example, it's must be 1072x1448px for Kobo Clara BW). If it doesn't match, Nickel Screensaver will take extra time to scale the unoptimized image first (it does that everytime).
+
+## Resources for screensavers or for creating screensavers
+- [readerbackdrop.com](https://www.readerbackdrop.com/)
+- [huaban.com](https://huaban.com)
+
 # How to uninstall  
 To uninstall Nickel Screensaver, put a file named `uninstall` in the `.adds/screensaver` folder.
 
@@ -84,12 +95,3 @@ You need to edit Kobo's setting file to prevent it from hidden *nix folders.
   ```
 4. Save and eject the device safely
 5. Reboot the device
-
-# Screensaver preparation  
-
-Best practices:  
-1. Screensavers must be either PNG or JPG format
-2. A file size under 1MB is recommended. You can use services like [Squoosh](https://squoosh.app/) to reduce the file size.
-3. To avoid unnecessary slowdown, the screensaver dimensions must exactly match your Kobo eReader's screen resolution (for example, it's 1072x1488px for Kobo Clara BW). If it doesn't match, Nickel Screensaver will take extra time to scale the image first.
-
-When ready, copy your screensavers to the `.adds/screensaver` folder on your Kobo eReader, then safely eject it. Now try to open a book, lock the device and see if it works.  
