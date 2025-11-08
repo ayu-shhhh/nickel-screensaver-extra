@@ -24,6 +24,9 @@ struct nh_info nickelscreensaver = {
 };
 
 int ns_init() {
+    // Only seed qsrand() once
+    qsrand(QTime::currentTime().msec());
+
     return 0;
 }
 
@@ -96,8 +99,6 @@ extern "C" __attribute__((visibility("default"))) void ns_handle_sleep(N3PowerWo
     // Enable transparent mode when reading
     bool is_reading = current_view_name == QStringLiteral("ReadingView");
     bool transparent_mode = is_reading;
-    // Seed qrand
-    qsrand(QTime::currentTime().msec());
 
     // 1. Check NS's folder
     if (!screensaver_dir.exists()) {
